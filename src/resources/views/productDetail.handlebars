@@ -1,87 +1,114 @@
-<div class="single-product">
+{{#with productData}}
+  <div class="single-product">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>{{this.productName}}</h1>
+          </div>
+        </div>
+        <hr />
+        <div class="col-md-6">
+          <div class="product-slider">
+            <div id="slider" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="assets/images/item-01.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/big-02.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/big-03.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/big-04.jpg" />
+                </li>
+
+              </ul>
+            </div>
+            <div id="carousel" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="assets/images/thumb-01.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-02.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-03.jpg" />
+                </li>
+                <li>
+                  <img src="assets/images/thumb-04.jpg" />
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-content">
+            <h4>{{this.productName}}</h4>
+            <h6>{{this.productPrice}}</h6>
+            <p>{{this.description}}
+            </p>
+            <span>Kho:7</span>
+            <form action="" method="get">
+              <label for="quantity">Số lượng:</label>
+              <input
+                name="quantity"
+                type="quantity"
+                class="quantity-text"
+                id="quantity"
+                onfocus="if(this.value == '1') { this.value = ''; }"
+                onBlur="if(this.value == '') { this.value = '1';}"
+                value="1"
+              />
+              <input type="submit" class="button" value="Mua Ngay!" />
+            </form>
+            <div class="down-content">
+              <div class="categories">
+                <h6>Loại:
+                  <span><a href="#">1</a>,<a href="#">2</a>,<a
+                      href="#"
+                    >3</a></span></h6>
+              </div>
+              <div class="share">
+                <h6>Share:
+                  <span><a href="#"><i class="fa fa-facebook"></i></a><a
+                      href="#"
+                    ><i class="fa fa-linkedin"></i></a><a href="#"><i
+                        class="fa fa-twitter"
+                      ></i></a></span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/with}}
+<div class="featured-items">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="section-heading">
           <div class="line-dec"></div>
-          <h1>{{this.id}}</h1>
+          <h1>Gợi ý</h1>
         </div>
       </div>
-      <hr />
-      <div class="col-md-6">
-        <div class="product-slider">
-          <div id="slider" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="assets/images/item-01.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/big-02.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/big-03.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/big-04.jpg" />
-              </li>
-
-            </ul>
-          </div>
-          <div id="carousel" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="assets/images/thumb-01.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/thumb-02.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/thumb-03.jpg" />
-              </li>
-              <li>
-                <img src="assets/images/thumb-04.jpg" />
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="right-content">
-          <h4>{{this.productName}}</h4>
-          <h6>{{this.productPrice}}</h6>
-          <p>{{this.description}}
-          </p>
-          <span>Kho:7</span>
-          <form action="" method="get">
-            <label for="quantity">Số lượng:</label>
-            <input
-              name="quantity"
-              type="quantity"
-              class="quantity-text"
-              id="quantity"
-              onfocus="if(this.value == '1') { this.value = ''; }"
-              onBlur="if(this.value == '') { this.value = '1';}"
-              value="1"
-            />
-            <input type="submit" class="button" value="Mua Ngay!" />
-          </form>
-          <div class="down-content">
-            <div class="categories">
-              <h6>Loại:
-                <span><a href="#">1</a>,<a href="#">2</a>,<a
-                    href="#"
-                  >3</a></span></h6>
-            </div>
-            <div class="share">
-              <h6>Share:
-                <span><a href="#"><i class="fa fa-facebook"></i></a><a
-                    href="#"
-                  ><i class="fa fa-linkedin"></i></a><a href="#"><i
-                      class="fa fa-twitter"
-                    ></i></a></span></h6>
-            </div>
-          </div>
+      <div class="col-md-12">
+        <div class="owl-carousel owl-theme">
+          {{#each data}}
+            <a href="/products/{{this.slug}}">
+              <div class="featured-item">
+                <img src="{{this.productImage}}" alt="Item 1" />
+                <h4>{{this.productName}}</h4>
+                <h6>{{this.productPrice}}₫</h6>
+              </div>
+            </a>
+          {{/each}}
         </div>
       </div>
     </div>

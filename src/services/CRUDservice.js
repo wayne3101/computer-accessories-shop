@@ -46,15 +46,21 @@ const getAllProduct = () => {
     }
   });
 };
-const getProductDetail = () => {
+
+const getProductDetail = (params) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const products = db.Product.findOne({
+      const product = db.Product.findOne({
         where: {
-          slug: req.params.slug,
+          slug: params,
         },
+        raw: true,
       });
-      resolve(products);
+      if (product) {
+        resolve(product);
+      } else {
+        resolve([]);
+      }
     } catch (e) {
       reject(e);
     }

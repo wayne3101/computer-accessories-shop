@@ -22,7 +22,7 @@ app.use(morgan("combined"));
 //template engine
 app.use(express.static(path.join(__dirname, "resources/public")));
 app.use(express.static(path.join(__dirname, "resources")));
-app.use(express.static("public"));
+
 app.use("/img", express.static("img"));
 app.engine("handlebars", handlebars());
 app.set("view engine", "handlebars");

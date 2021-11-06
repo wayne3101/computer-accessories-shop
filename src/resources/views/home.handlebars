@@ -33,69 +33,15 @@
       </div>
       <div class="col-md-12">
         <div class="owl-carousel owl-theme">
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-01.jpg" alt="Item 1" />
-              <h4>Laptop Dell Vostro 3400 i5 2019</h4>
-              <h6>18.890.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-02.jpg" alt="Item 2" />
-              <h4>Laptop Apple MacBook Pro M1</h4>
-              <h6>44.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-03.jpg" alt="Item 3" />
-              <h4>Laptop Asus ZenBook UX325EA i5</h4>
-              <h6>24.290.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-04.jpg" alt="Item 4" />
-              <h4>Laptop Dell Gaming G3 15 i7 2020</h4>
-              <h6>31.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-05.jpg" alt="Item 5" />
-              <h4>Laptop Apple MacBook Pro 16 M1 Max 2021</h4>
-              <h6>90.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-06.jpg" alt="Item 6" />
-              <h4>Laptop HP Omen 15 ek0078TX i7 10750H</h4>
-              <h6>56.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-04.jpg" alt="Item 7" />
-              <h4>Laptop Dell Gaming G3 15 i7 2020</h4>
-              <h6>31.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-05.jpg" alt="Item 8" />
-              <h4>Laptop Apple MacBook Pro 16 M1 Max 2021</h4>
-              <h6>90.990.000₫</h6>
-            </div>
-          </a>
-          <a href="single-product.html">
-            <div class="featured-item">
-              <img src="assets/images/item-06.jpg" alt="Item 9" />
-              <h4>Laptop HP Omen 15 ek0078TX i7 10750H</h4>
-              <h6>31.990.000₫</h6>
-            </div>
-          </a>
+          {{#each data}}
+            <a href="/products/{{this.slug}}">
+              <div class="featured-item">
+                <img src="{{this.productImage}}" alt="Item 1" />
+                <h4>{{this.productName}}</h4>
+                <h6>{{this.productPrice}}₫</h6>
+              </div>
+            </a>
+          {{/each}}
         </div>
       </div>
     </div>

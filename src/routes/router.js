@@ -11,6 +11,7 @@ const initWebRoutes = (app) => {
   router.get("/about", homeController.getAboutPage);
   router.get("/register", registerController.getRegisterPage);
   router.get("/products", productController.getProduct);
+  router.get("/contact", homeController.getContactPage);
   router.get("/", homeController.getHomePage);
   return app.use("/", router);
 };
