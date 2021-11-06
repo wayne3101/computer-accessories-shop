@@ -1,19 +1,46 @@
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <title>Công Ty Cổ Phần Tập Đoàn Công Nghệ ADT</title>
+    <link href="../../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../../public/assets/css/tooplate-main.css">
+    <link rel="stylesheet" href="../../public/assets/css/owl.css">
+    <link rel="stylesheet" href="../../public/assets/css/flex-slider.css">
+    
   </head>
   <body>
-    <div class="app">
+    
       {{> header}}
 
-      <div class="container">
-        {{{body}}}
-      </div>
+      
+      {{{body}}}
+      
 
       {{> footer}}
-    </div>
+
+
+    
+    <script src="../../public/vendor/jquery/jquery.min.js"></script>
+    <script src="../../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="../../public/assets/js/custom.js"></script>
+    <script src="../../public/assets/js/owl.js"></script>
+
+    <script language="text/Javascript">
+      cleared[0] = cleared[1] = cleared[2] = 0;
+      function clearField(t) {
+        if (!cleared[t.id]) {
+          cleared[t.id] = 1;
+          t.value = "";
+          t.style.color = "#fff";
+        }
+      }
+    </script>
   </body>
 </html>

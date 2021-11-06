@@ -1,0 +1,37 @@
+<div class="featured-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="section-heading">
+          <div class="line-dec"></div>
+          <h1>Sản Phẩm</h1>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <div id="filters" class="button-group">
+          <button class="btn btn-primary" data-filter="*">All</button>
+          <button class="btn btn-primary" data-filter=".new">HOT</button>
+          <button class="btn btn-primary" data-filter=".low">GAMING</button>
+          <button class="btn btn-primary" data-filter=".high">CÔNG SỞ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="featured container no-gutter">
+
+  <div class="row posts">
+    {{#each products}}
+      <div id="1" class="item new col-md-4">
+        <a href="/products/{{this.slug}}">
+          <div class="featured-item">
+            <img src="{{this.productImage}}" alt="" />
+            <h4>{{this.id}}</h4>
+            <h6>{{this.productPrice}}₫</h6>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</div>
